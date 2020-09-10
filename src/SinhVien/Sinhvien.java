@@ -31,10 +31,7 @@ import javax.swing.table.DefaultTableModel;
 public class Sinhvien extends javax.swing.JFrame {
     Connection conn=Connect.KetNoi();
     public static String  sql="Select * from  Students  ";
-   
-   
-   
-    
+      
     public void Show(){
           Uptable.LoadData(sql, tbsinhvien);
           txttong.setText("Tổng số sinh viên: "+tbsinhvien.getRowCount());
@@ -53,6 +50,7 @@ public class Sinhvien extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         txttentim = new javax.swing.JTextField();
         btnload = new javax.swing.JButton();
         btnxoa = new javax.swing.JButton();
@@ -73,6 +71,8 @@ public class Sinhvien extends javax.swing.JFrame {
         txttong = new javax.swing.JLabel();
         txtname = new javax.swing.JTextField();
         btnExport = new javax.swing.JButton();
+        jLabel7 = new javax.swing.JLabel();
+        txtGioitinh = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -103,13 +103,13 @@ public class Sinhvien extends javax.swing.JFrame {
 
         tbsinhvien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "BirthDate", "DiemTB"
+                "ID", "Name", "BirthDate", "DiemTB", "Gioi tịnh"
             }
         ));
         tbsinhvien.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -151,6 +151,8 @@ public class Sinhvien extends javax.swing.JFrame {
             }
         });
 
+        jLabel7.setText("Giới tính");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -159,6 +161,23 @@ public class Sinhvien extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txttong)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel7)
+                                .addGap(52, 52, 52)
+                                .addComponent(txtGioitinh)
+                                .addGap(302, 302, 302)))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnsua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnxoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExport, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4)
@@ -180,19 +199,7 @@ public class Sinhvien extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(btnthem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(txttong)
-                                .addGap(757, 757, 757)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnsua, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnxoa, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnload, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnExport, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))))
+                                    .addComponent(btnthem, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
@@ -229,13 +236,13 @@ public class Sinhvien extends javax.swing.JFrame {
                             .addComponent(jLabel6)
                             .addComponent(txtdiemtb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(btnthem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(15, 15, 15)
-                .addComponent(btnsua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnsua, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(txtGioitinh, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(btnxoa, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(26, 26, 26)
@@ -244,7 +251,10 @@ public class Sinhvien extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnExport, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnload, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(btnload, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(293, 293, 293))
         );
 
@@ -301,6 +311,7 @@ public class Sinhvien extends javax.swing.JFrame {
                 this.txtname.setText(rs.getString("Name"));
                 this.txtns.setText(rs.getString("BirthDate"));
                 this.txtdiemtb.setText(rs.getString("DiemTB"));
+                this.txtGioitinh.setText(rs.getString("gioitinh"));
             }
         }catch(Exception ex){
             JOptionPane.showMessageDialog(null, ex);
@@ -326,7 +337,7 @@ public class Sinhvien extends javax.swing.JFrame {
                 if(rs.next()){
                     JOptionPane.showMessageDialog(null, "ID đã tồn tại","Thông báo",JOptionPane.ERROR_MESSAGE);
                 }else{
-                    ChucNang.Insert(txtid.getText().trim(),txtname.getText().trim(), txtns.getText().trim(),txtdiemtb.getText().trim());
+                    ChucNang.Insert(txtid.getText().trim(),txtname.getText().trim(), txtns.getText().trim(),txtdiemtb.getText().trim(),txtGioitinh.getText().trim());
                     Show();
                     txtid.setText("");
                     txtname.setText("");
@@ -358,7 +369,7 @@ public class Sinhvien extends javax.swing.JFrame {
                 ResultSet rs=pt.executeQuery(); 
                 if( rs.next()){
 
-                    ChucNang.Update(txtid.getText().trim(),txtname.getText().trim(), txtns.getText().trim(),txtdiemtb.getText().trim());
+                    ChucNang.Update(txtid.getText().trim(),txtname.getText().trim(), txtns.getText().trim(),txtdiemtb.getText().trim(), txtGioitinh.getText().trim());
                     Show();
                     txtid.setText("");
                     txtname.setText("");
@@ -376,7 +387,7 @@ public class Sinhvien extends javax.swing.JFrame {
 
     private void btnExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportActionPerformed
         // TODO add your handling code here:
-        JFileChooser excelFileChooser = new JFileChooser("C:\\Users\\son\\Desktop");
+        JFileChooser excelFileChooser = new JFileChooser("D:\\");
         excelFileChooser.setDialogTitle("Save As");
         FileNameExtensionFilter fnef = new FileNameExtensionFilter("EXCEL FILES", "xls", "xlsx", "xlsm");
         DefaultTableModel model = new DefaultTableModel();
@@ -453,6 +464,7 @@ public class Sinhvien extends javax.swing.JFrame {
     private javax.swing.JButton btnsua;
     private javax.swing.JButton btnthem;
     private javax.swing.JButton btnxoa;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -460,8 +472,10 @@ public class Sinhvien extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tbsinhvien;
+    private javax.swing.JTextField txtGioitinh;
     private javax.swing.JTextField txtdiemtb;
     private javax.swing.JTextField txtid;
     private javax.swing.JTextField txtname;
