@@ -329,7 +329,9 @@ public class Sinhvien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Bạn chưa nhập ngày sinh","Thông Báo",JOptionPane.WARNING_MESSAGE);
             }else if(txtdiemtb.getText().equals("")){
                 JOptionPane.showMessageDialog(null,"Bạn chưa nhập điểm TB","Thông Báo",JOptionPane.WARNING_MESSAGE);
-            } else{
+            } else if(txtGioitinh.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Bạn chưa nhập giới tính","Thông Báo",JOptionPane.WARNING_MESSAGE);
+            } else {
                 String sql="SELECT * FROM Students WHERE ID=? ";
                 PreparedStatement pt=conn.prepareStatement(sql); 
                 pt.setString(1,txtid.getText()); 
@@ -362,6 +364,8 @@ public class Sinhvien extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null,"Bạn chưa nhập ngày sinh","Thông Báo",JOptionPane.WARNING_MESSAGE);
             }else if(txtdiemtb.getText().equals("")){
                 JOptionPane.showMessageDialog(null,"Bạn chưa nhập điểm TB","Thông Báo",JOptionPane.WARNING_MESSAGE);
+            } else if(txtGioitinh.getText().equals("")){
+                JOptionPane.showMessageDialog(null,"Bạn chưa nhập giới tính","Thông Báo",JOptionPane.WARNING_MESSAGE);
             } else{
                 String sql="SELECT * FROM Students WHERE ID=? ";
                 PreparedStatement pt=conn.prepareStatement(sql); 
