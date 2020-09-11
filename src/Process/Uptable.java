@@ -25,13 +25,14 @@ public class Uptable {
             Statement stm;
              stm=conn.createStatement();
              rs = stm.executeQuery(sql);            
-            String row[]=new String[5];
+            String row[]=new String[6];
             while(rs.next()){
-                row[0]=rs.getString(1);
-                  row[1]=rs.getString(2);
-                    row[2]=rs.getString(3);
-                    row[3]=rs.getString(4);
-                    row[4]=rs.getString(5);
+                row[0]=rs.getString("ID");
+                  row[1]=rs.getString("Name");
+                    row[2]=rs.getString("BirthDate");
+                    row[3]=rs.getString("gioitinh");
+                    row[4]=rs.getString("DiemTB");
+                    row[5]=rs.getString("Khoa");
                     table.addRow(row);
             }
            
